@@ -1,0 +1,703 @@
+\input{settings} % add packages, settings, and declarations in settings.tex
+\begin{document}
+	\lhead{Trevor Yeh} 
+	\rhead{\today} 
+	\cfoot{Chapter 1: Vector Analysis}
+	
+	\emph{Dot product} - also known as $\underline{scalar}$ product; \( A \cdot B \) is defined by \( AB\cos{\theta} \).
+	
+	\begin{equation}
+	A \cdot B \equiv AB\cos{\theta}
+	\end{equation}
+	
+	The operation is both commutative and distributive. The dot product gives the angular relationship between the two vectors. In Eq (1), the definition is derived from the Law of Cosines. The table below shows the values that the dot product takes on given an angle \( \theta \).
+	
+	\bigskip
+
+
+	
+	\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline
+		$\theta$ & Value \\
+		\hline
+		$0\degree $ & $AB$ \\
+		\hline
+		$1\degree-89\degree$ & $+AB\cos{\theta}$ \\
+		\hline
+		$90\degree $ & 0 \\
+		\hline
+		$91\degree - 179 \degree$ & $-AB\cos{\theta}$ \\
+		\hline
+	\end{tabular}
+	\end{center}
+
+
+	\bigskip
+	
+	To calculate the dot product with vectors alone, without an angle, we multiply the scalars of each component with their respective counter parts (\( A_xB_x \)) and sum them up for two vectors, \(\mathbf{A} \) and \( \mathbf{ B} \) in \( \mathbb{R}^2\).
+	
+	
+	\begin{equation}
+		\begin{gathered}
+		\mathbf{ A} = A_x\mathbf{\hat{x}} + A_y\mathbf{\hat{y}} \\
+		\mathbf{ B} = B_x\mathbf{\hat{x}} + B_y\mathbf{\hat{y}} \\
+		A\cdot B = A_xB_x\mathbf{\hat{x}} + A_yB_y\mathbf{\hat{y}} \\
+		\text{Or more generally; } \sum_{i} A_i B_i 
+		\end{gathered}
+	\end{equation}
+	
+	\emph{Cross product} - also know as vector product; \( A \times B \) is defined as 
+	\( AB\sin{\theta}\ \hat{n}\). 
+
+	\begin{equation}
+	A \times B \equiv AB\sin{\theta} \ \hat{n}
+	\end{equation}	
+	
+	This process gives a vector that is orthogonal to the other two vectors. The orthongonal vector is in the $\hat{n}$ direction. To calculate the cross product we can assemble a component matrix.
+	
+	\begin{equation}
+		\begin{tabular}{|ccc|}
+			$\mathbf{\hat{x}}$ & $\mathbf{\hat{y}}$ & $\hat{z}$ \\
+			$A_x$ & $A_y$ & $A_z$  \\
+			$B_x$ & $B_y$  &$B_z $ \\
+		\end{tabular}
+		= (A_yB_z-A_zB_y)\mathbf{\hat{x}} + (A_zB_y-A_yB_z)\mathbf{\hat{y}} + (A_xB_y-A_yB_y)\mathbf{\hat{z}}
+	\end{equation}
+	
+	Since the cross product gives us another vector, we can then perform the same operations mentioned previously.
+	
+	The position vector, r, is a vector that points to a single point. 
+	
+	\begin{equation}
+	r \equiv x\mathbf{\hat{x}}+y\mathbf{\hat{y}}+z\mathbf{\hat{z}}
+	\end{equation}  
+	
+	The unit vector of r, \( \hat{r} \) , points in its own direction which is a combination of the other vectors.
+	
+	\begin{equation}
+	\hat{r} = \frac{x\mathbf{\hat{x}}+y\mathbf{\hat{y}}+z\mathbf{\hat{z}}}{\sqrt{x\mathbf{\hat{x}}+y\mathbf{\hat{y}}+z\mathbf{\hat{z}}}}
+	\end{equation}	 
+	
+	\newpage
+	%Page 2
+	A vector can the be differentiated therefore we have something called the infinitesimal displacement vector, \( dl \).
+	
+	\begin{equation}
+	dl = dx\mathbf{\hat{x}}+dy\mathbf{\hat{y}}+dz\mathbf{\hat{z}}
+	\end{equation}
+	
+	Gradient is the derivative of each component of a vector or scalar function with respect to the coordinates (x, y, z). 
+	
+	
+	\begin{equation}
+	\nabla{}=\frac{\partial{}}{\partial{x}}\hat{x} + \frac{\partial{}}{\partial{y}}\hat{y} + \frac{\partial{}}{\partial{z}}\hat{z}
+	\end{equation}
+	
+	Given a scalar function H(x,y,z), we can write the differential of the function as follows...
+	
+
+	\begin{equation}
+		\begin{gathered}
+		\text{Recall that differential of an equation...} \ dy = \frac{dy}{dx}dx \\
+		dH = \frac{\partial{H}}{\partial{x}}dx + \frac{\partial{H}}{\partial{y}}dy + \frac{\partial{H}}{\partial{z}}dz\\
+		dH = \frac{\partial{H}}{\partial{x}}\mathbf{\hat{x}} + \frac{\partial{H}}{\partial{y}}\mathbf{\hat{y}} + \frac{\partial{H}}{\partial{z}}\mathbf{\hat{z}} \cdot (dx\mathbf{\hat{x}}+dy\mathbf{\hat{y}}+dz\mathbf{\hat{z}})\\
+		\boxed{dH = \nabla{H} \cdot dl}
+		\end{gathered}
+	\end{equation}
+	
+	Divergence is the measure of how much a vector, \textbf{v}, spreads from the point in question. The divergence of \textbf{v}, is given by the dot product of the gradient and \textbf{v}.
+	
+	\begin{equation}
+	\text{Divergence} = \nabla{} \cdot \mathbf{\mathrm{v}}
+	\end{equation}
+	
+	Given that the vector v is in \( \mathbb{R}^3 \), the divergence can be written in general terms as the following equation...
+	
+
+\begin{equation}
+	\begin{gathered}
+	\nabla{} \cdot \mathbf{\mathrm{v}} = \frac{\partial{}}{\partial{x}}\hat{x} + \frac{\partial{}}{\partial{y}}\hat{y} + \frac{\partial{}}{\partial{z}}\hat{z} \cdot (v_x\hat{x} + v_y\hat{y}+v_z\hat{z})\\
+	= \frac{\partial{}}{\partial{x}}v_x + \frac{\partial{}}{\partial{y}}v_y+ \frac{\partial{}}{\partial{z}}v_z
+	\end{gathered}
+\end{equation}
+
+Curl is the measure of how much a vector function, v, curls around the point in question. The curl of v is the cross product of the gradient and v. 
+
+
+
+\begin{center}
+	\begin{tabular}{|ccc|}
+	$\hat{x}$ & ${y}$ & $\hat{z}$ \\
+	$\frac{\partial{}}{\partial{x}}$ & $\frac{\partial{}}{\partial{y}} $ & $\frac{\partial{}}{\partial{z}}$  \\
+	$v_x$ & $v_y$  &$v_z $ \\ =
+	\end{tabular}
+\end{center}
+
+\begin{equation}
+\begin{tabular}{|ccc|}
+$\hat{x}$ & ${y}$ & $\hat{z}$ \\
+$\frac{\partial{}}{\partial{x}}$ & $\frac{\partial{}}{\partial{y}} $ & $\frac{\partial{}}{\partial{z}}$  \\
+$v_x$ & $v_y$  &$v_z $ 
+\end{tabular}
+= \mathbf{\hat{x}}(\frac{\partial{v_z}}{\partial{y}}-\frac{\partial{v_y}}{\partial{y}}) + \mathbf{\hat{y}}(\frac{\partial{v_x}}{\partial{y}}-\frac{\partial{v_z}}{\partial{y}}) + \mathbf{\hat{z}}(\frac{\partial{v_y}}{\partial{y}}-\frac{\partial{v_x}}{\partial{y}})
+\end{equation}
+ \newpage
+Gradients, like derivatives, follow rules while operating on functions. There sum rules, multiplicative rules, product rules, and quotient rules.
+\bigskip
+
+Sum rule:
+\begin{equation}
+\frac{d}{dx}(f + g) = \frac{df}{dx} + \frac{dg}{dx}
+\end{equation}
+
+\begin{equation}
+\nabla{(f+g)}=\nabla{f}+\nabla{g}
+\end{equation}
+
+\begin{equation}
+\nabla{} \cdot (f+g) = \nabla{} \cdot f + \nabla{} \cdot  g
+\end{equation}
+
+\begin{equation}
+\nabla \times (f+g) = \nabla \times f + \nabla \times g
+\end{equation}
+
+Multiplicative (multiply by constant) rule:
+\begin{equation}
+\frac{d}{dx}(kf) = k\frac{df}{dx}
+\end{equation}
+
+\begin{equation}
+\nabla{kf} = k\nabla{f}
+\end{equation}
+
+\begin{equation}
+\nabla{} \cdot (kA) = k(\nabla{} \cdot A)
+\end{equation}
+
+\begin{equation}
+\nabla \times (kA) = k(\nabla \times A)
+\end{equation}
+
+Product rule: \begin{equation}
+\begin{cases}
+	fg, & \text{scalar function}.\\
+	f\mathbf{A}, & \text{vector fuction}.
+\end{cases}
+\end{equation}
+
+\begin{equation}
+\frac{d}{dx}(fg) = \frac{df}{dx}g + \frac{dg}{dx}f
+\end{equation}
+
+\begin{equation}
+\nabla{fg} = \nabla{f}g + \nabla{g}f
+\end{equation}
+
+\begin{equation}
+\nabla{} \cdot (fA) = \nabla{f} \cdot \mathbf{A} + \nabla{\mathbf{A}} \cdot f 
+\end{equation}
+
+\begin{equation}
+\nabla \times (fA) = \nabla{f} \times \mathbf{A} + f (\nabla \times \mathbf{A})
+\end{equation}
+
+\begin{equation}
+\begin{cases}
+	\mathbf{A \cdot B}, & \text{scalar}.\\
+	\mathbf{A  \times  B}, & \text{vector}.
+\end{cases}
+\end{equation}
+
+\begin{equation}
+\nabla{\mathbf{A} \cdot \mathbf{B}} = \mathbf{A} \times (\nabla \times \mathbf{B}) +\mathbf{ B} \times (\nabla \times \mathbf{A})
+\end{equation}
+
+\begin{equation}
+\nabla{} \cdot (\mathbf{A }\times \mathbf{B}) = \mathbf{B} \cdot (\nabla \times \mathbf{A}) - \mathbf{A} \cdot (\nabla \times \mathbf{B})
+\end{equation}
+
+\begin{equation}
+\nabla \times(\mathbf{A} \times \mathbf{B}) = (\mathbf{B} \cdot \nabla{})\mathbf{A}-(A\mathbf{A} \cdot \nabla{})\mathbf{B} + \mathbf{A}(\nabla{} \cdot  \mathbf{B}) - \mathbf{B}(\nabla{} \cdot  \mathbf{A})
+\end{equation}
+
+\newpage
+
+Quotient rule:
+\begin{equation}
+\frac{d}{dx}(\frac{f}{g})=\frac{g\frac{df}{dx}-f\frac{dg}{dx}}{g^2}
+\end{equation}
+
+\begin{equation}
+\nabla{(\frac{f}{g})}=\frac{g\nabla{f}-f\nabla{g}}{g^2} 
+\end{equation}
+
+\begin{equation}
+\nabla{} \cdot (\frac{\mathbf{A}}{g})=\frac{g\nabla{\mathbf{A}}-\mathbf{A} \cdot \nabla{g}}{g^2}
+\end{equation}
+
+
+\begin{equation}
+\nabla \times \frac{A}{g}=\frac{g(\nabla \times \mathbf{A})-(\nabla{g}\times \mathbf{A})}{g^2} = \frac{g(\nabla \times \mathbf{A})}{g^2}
+\end{equation}
+
+Since the gradient is the first derivative, the another derivative can be taken; in other words, applying the gradient twice.
+
+
+
+
+\begin{enumerate}
+\item Divergence of Gradient: \( \nabla{} \cdot (\nabla{T}) \) (very important)
+\item Curl of Gradient: \( \nabla \times (\nabla{T}) \) (always 0)
+\item Gradient of Divergence: \( \nabla{(\nabla{} \cdot \mathbf{v})} \)
+\item Divergence of Curl: \( \nabla{} \cdot (\nabla \times \mathbf{v}) \) (always 0)
+\item Curl of Curl: \( \nabla \times (\nabla \times \mathbf{v}) \) (reduce to other forms)
+
+\end{enumerate}
+
+Line integrals are depedent on the path that is taken, but there are special vector functions for which the line integral is independent of the path and is determined completely by the end point(e.g \( \int\limits_{a}^{b}F\cdot dl \)). The term for this type of property is called conservative.
+
+
+\begin{equation}
+\int\limits_{a}^{b}v\cdot dl; \text{where dl is the infinitesimal displacement vector}
+\end{equation}
+
+
+\begin{equation}
+\oint\limits_{a}^{b} v \cdot dl = 0; \text{0 because start = end on a closed loop}
+\end{equation}
+
+Surface integrals of a vector function over some infinitesimal patch of area, da, is a measure of how much of a vector field passes through that area (vector perpendicular to the surface). 
+
+
+\begin{equation}
+\int_S \mathbf{v} \cdot da
+\end{equation}
+
+
+Volume integrals are triple integrals that essentially give us a volume. In later applications, the volume integral will be used to calculate flux densities.
+\begin{equation}
+\int_V v d\tau = \int(v_x\mathbf{\hat{x}}+v_y\mathbf{\hat{y}}+v_z\mathbf{\hat{z}})d\tau =\boxed{\mathbf{\hat{x}}\int v_x d\tau + \mathbf{\hat{y}}\int v_y d\tau  + \mathbf{\hat{z}}\int v_z d\tau }
+\end{equation}
+
+\newpage
+
+
+The Fundamental Theorem of Calculus is that for a continuous function, f, on the closed integral \( [a,b] \), the indefinite integral of f is given by F. F is then evaluated at the points a and b.
+
+
+\begin{equation}
+\int\limits_{a}^{b} f(x)dx = F(x)\vert_{a}^{b}=F(b) - F(a)
+\end{equation}
+
+The Fundamental Theorem of Gradients is much like the FTC, can be given in a similar form for a scalar function T(x,y,z).
+
+\begin{equation}
+\int\limits_{a}^{b} (\nabla{T})\cdot dl =T(b) - T(a)
+\end{equation}
+
+Notice that there is no reference to the path meaning that the gradient has the special property of being path independent (conservative).  \emph{"A conservative force may be associated with a scalar potential energy function, whereas a non-conservative force cannot."}
+\smallskip
+
+\emph{A conservative force can be derived from a scalar potential energy function.}
+
+
+\begin{equation}
+F_c = -\nabla{U}
+\end{equation}
+
+The negative sign indicates that the force points in the direction of decreasing potential energy.
+
+
+\begin{equation}
+\begin{gathered}
+\text{Gravity } U_g = mgy; \ \ \ F_y = - \frac{dU_g}{dy} = -mg \\\\
+\text{Spring \ } U_{sp}=\frac{1}{2}kx^2; \ \ \ F_x = - \frac{dU_sp}{dx} = -kx\\\\
+\text{More generally; \ }  F_c = -\nabla{U}
+\end{gathered} 
+\end{equation}
+
+The Fundamental Theorem of Divergences is also known as Gauss' theorem, Green's Theorem, or the divergence theorem. The theorem states that:
+
+
+\begin{equation}
+\int_V (\nabla{} \cdot \mathbf{v})d\tau = \oint_s \mathbf{v}\cdot d\mathbf{a}
+\end{equation}
+
+The Fundamental Theorem of Curls also known as Stokes' theorem. Stokes' theorem is a transformation from a surface integral to the a line integral and states that:
+
+
+\begin{equation}
+\int_S (\nabla \times\mathbf{v})\cdot d\mathbf{a}  = \oint_P \mathbf{v} \cdot dl
+\end{equation}
+
+
+\begin{equation}
+\oint_S (\nabla \times\mathbf{v})\cdot d\mathbf{a} = 0
+\end{equation}
+
+\newpage
+
+Considering a vector function \( \mathbf{v} = \frac{\hat{r}}{r^2} \)
+
+The divergence of this vector fuction is:
+
+\begin{equation}
+\nabla{} \cdot \mathbf{v} = \frac{1}{r^2}\frac{\partial{}}{\partial{r}} (r^2\frac{1}{r^2})  =  \frac{1}{r^2}\frac{\partial{}}{\partial{r}} (1) = 0
+\end{equation}
+The surface integral for this function is:
+
+
+\begin{equation}
+\oint \mathbf{v} \cdot da = \int\limits_{0}^{2\pi}\int\limits_{0}^{\pi}(\frac{1}{r^2}r^2)(\sin{\theta}) d\theta d\phi = 4\pi \neq  \int_V (\nabla{} \cdot \mathbf{v})d\tau = 0
+\end{equation}
+
+Recall that (42) states that the integral of divergence of a vector function over all space should be equal to the closed surface integral of that vector. But as we can see, this is not the case for this vector function. This can be explained by using the Dirac delta function, \( \delta(x). \).
+
+The one-dimensional Dirac delta function can be imagined as an infinitely high, and infinitesimally narrow with an area of 1. 
+
+\begin{equation}
+\delta(x) =\begin{cases}
+0 & \text{if } x \neq 0\\
+\infty & \text{if } x= 0
+\end{cases} \mathrm{with } \int\limits_{-\infty}^{+\infty}\delta(x)dx = 1
+\end{equation}
+
+Given an ordinary, continuous function \( f(x) \), then the product \( f(x)\delta(x) \) is zero everywhere except at x = 0.
+
+\begin{equation}
+\int\limits_{-\infty}^{+\infty}f(x)\delta(x)dx = f(0)\int\limits_{-\infty}^{+\infty}\delta(x)dx = f(0)
+\end{equation}
+
+We can also shift this spoke from x = 0 to some point x = a.
+
+
+\begin{equation}
+\delta(x-a) =\begin{cases}
+0 & \text{if } x \neq a\\
+\infty & \text{if } x= a
+\end{cases} \mathrm{with }\int\limits_{-\infty}^{+\infty}\delta(x-a)dx = 1
+\end{equation}
+
+A generalized form for this would be:
+
+\begin{equation}
+\int\limits_{-\infty}^{+\infty}f(x)\delta(x-a)dx = f(a)\int\limits_{-\infty}^{+\infty}\delta(x)dx = f(a)
+\end{equation}
+
+The generalized 3D delta function is given by:
+
+\begin{equation}
+\delta^3(r)=\delta(x)\delta(y)\delta(z)
+\end{equation}
+
+The volume integral is given by:
+
+\begin{equation}
+\int_{all space} \delta^3(r)dx=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}\delta(x)\delta(y)\delta(z)dxdydz = 1
+\end{equation}
+ Therefore, by simply multiplying the divergence by the Delta function and integrate, we will get the result of \( 4\pi \).
+ 
+ For example, when we had the divergence of the vector field following \( \frac{1}{r^2} \). 
+\begin{equation}
+\nabla{} \cdot \mathbf{v} = \frac{1}{r^2}\frac{\partial{}}{\partial{r}} (r^2\frac{1}{r^2})  =  \frac{1}{r^2}\frac{\partial{}}{\partial{r}} (1) = 0
+\end{equation}
+ 
+ Then if we integrate, we just get C, because the integral of 0 is some constant C. With the integral being in 3D, we integrate with respect to x, y, and z with bounds from \( -\infty \) to \( -\infty \). Therefore the constant is found to be 0.
+ \begin{equation}
+ \int_V (\nabla{} \cdot \mathbf{v})d\tau = \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} 0\ dx\ dy\ dz = 0
+ \end{equation}
+ 
+ But by the divergence theorem we know the value of the integral in Eq. 54 must equal to the \( 4\pi \). Therefore, if we want the result of \( 4\pi \), the integrand itself must equal to what we want. Let's try just using \( 4\pi \) as the integrand. 
+ \begin{equation}
+ \int_V (\nabla{} \cdot \mathbf{v})d\tau = \int_V (4\pi)d\tau =4\pi V
+ \end{equation}
+  This doesn't work :( . This is where the Dirac delta function allows us to get our answer. If we multiply the Dirac delta function, \( \delta^3(x) \), we get the following:
+  \begin{equation}
+  \begin{gathered}
+  \int_V (\nabla{} \cdot \mathbf{v})d\tau = \int_V 4\pi \delta^3(x)\ d\tau =4\pi \\
+  \therefore \nabla{} \cdot \mathbf{v} = 4\pi \delta^3(x)
+  \end{gathered}
+  \end{equation}
+  
+This works because \( 4\pi \) comes out of the integral and from Eq. 52, the integral of the Dirac delta function gives 1. 
+  \newpage
+\cfoot{Chapter 2: Electrostatics}
+
+The force of a test charge \( Q \) due to a point charge \( q \) is given by Coulomb's law separated by distance, \( r = r - r' \); \( r = \) position of Q and \( r'= \) position of q.
+
+\begin{equation}
+\boxed{F=\frac{1}{4\pi\epsilon_0}\frac{qQ}{r^2}\hat{r}}
+\end{equation}
+
+where \( \epsilon_0 \) is the permitivity of free space.
+
+
+\begin{equation}
+\epsilon_0 = 8.85 \times 10^{-12 }\frac{C^2}{N\cdot m^2}
+\end{equation}
+
+If there are several point charges, \( q_i \) at the distances \( r_i \), the force exerted on the test charge Q is given by the following:
+
+\begin{equation}
+F_{total}=F_1 + F_2 = \frac{Q}{4\pi\epsilon_0}(\frac{q_1}{r_1^2}\hat{r_1}+\frac{q_2}{r_2^2}\hat{r_2} + ... + \frac{q_i}{r_i^2}\hat{r_i})
+\end{equation}
+
+
+\begin{equation}
+F = Q \mathbf{E}
+\end{equation}
+
+where 
+
+\begin{equation}
+E(r) \equiv \frac{1}{4\pi\epsilon_0}\sum_{i=1}^{n}\frac{q_i}{r_i^2}\hat{r_i}
+\end{equation}
+
+E is the electric field of the source charges. The electric field makes no reference to the test charge Q.  The electric field is vector quantity that varies point to point and is determined by the configuration of the source charges. Physically, E(r) is the force per unit charge that would be exerted on a test charge if placed at point P. (Eq. 53)
+
+The notion of the electric field was that it was composed of discrete point charges, \( q_i \), but in actuality, the charge is a continuous distribution which is the sum over some region given by the following.
+
+\begin{equation}
+E(r) = \frac{1}{4\pi\epsilon_0}\int\frac{1}{r^2}\hat{r}dq
+\end{equation}
+
+where \( dq \) can represent the charge along a line, surface, or a volume. 
+
+\begin{equation}
+dq \rightarrow  \lambda dl ;  \ \  \sigma da; \ \ \rho d\tau
+\end{equation}
+
+\begin{equation}
+E(r) = \frac{1}{4\pi\epsilon_0}\int\frac{\lambda(r')}{r^2}\hat{r}dl
+\end{equation}
+
+\begin{equation}
+E(r) = \frac{1}{4\pi\epsilon_0}\int\frac{\sigma(r')}{r^2}\hat{r}da
+\end{equation}
+
+\begin{equation}
+E(r) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(r')}{r^2}\hat{r}d\tau
+\end{equation}
+
+\newpage
+
+In this section, we talk about field lines, flux and Gauss's Law. Field lines begin from the positive charge to the negative charge. When drawing the field lines, there must be a uniformity in the drawings (q = 8 lines, then 2q = 16 lines).
+\bigskip
+
+The flux of an electric field is the "amount of field lines" that pass through a given area (surface). In theory, if we were to draw all the lines that pass through, it would be infinite.
+\begin{equation}
+\Phi_E \equiv\int_S \mathbf{E}\cdot d\mathbf{a}
+\end{equation}
+
+The integrand \( \mathbf{E} \cdot d\mathbf{a} \) is a measure of the electric fields that pass through perpendicularly to the area, \( d\mathbf{a} \). Therefore, this suggests that over a \emph{closed} surface, the flux through the surface is the total charge inside. 
+
+Quantitatively, we can look at the case of a point charge, q, at the origin of a sphere with radius, r. The flux of E that passes through the sphere is given by the following.
+\begin{equation}
+\oint E \cdot d\mathbf{a} = \int \frac{1}{4\pi\epsilon_0}(\frac{q}{r}) \cdot (r^2\sin{\theta}\ d\theta\ d\phi \ \hat{r}) = \frac{1}{\epsilon_0}q
+\end{equation}
+
+Notice the terms of \( r^2 \) in the integrand; they cancel. This means that the product is constant (refer to Griffith's pg. 68). Essentially, for this closed surface, with a point charge, q, centered at the origin gives a flux of \( \frac{q}{\epsilon_0} \). This is in fact true for ALL closed surfaces enclosing a charge.
+
+Given a new scenario of a single point charge centered at the origin with other point charges scattered around it. According to the principle of superposition, the total field is the sum of all the individual fields.
+\begin{equation}
+\mathbf{E} = \sum_{i=1}^{n}\mathbf{E}_i
+\end{equation}
+
+Therefore the flux through the surface of that encloses them all is
+\begin{equation}
+\oint\mathbf{E}\cdot d\mathbf{a} = \sum_{i=1}^{n}(\oint\mathbf{E}\cdot d\mathbf{a}) = \sum_{i=1}^{n}(\frac{1}{\epsilon_0}q_i).
+\end{equation}
+
+Then for any closed surface enclosing n number of charges.
+\begin{equation}
+\boxed{\oint_S \mathbf{E}\cdot d\mathbf{a} = \frac{1}{\epsilon_0}Q_{enc}}
+\end{equation}
+
+where \( Q_{enc} \) is the total charge enclosed by the surface. This is Gauss's Law.
+
+Currently, we have the integral form of Gauss's Law, but it can be converted to a differential form. By applying divergence theorem (Eq. 42): 
+\begin{equation}
+\oint_S \mathbf{E}\cdot d\mathbf{a} = \int_V (\nabla{} \cdot \mathbf{E}) d\tau
+\end{equation}
+
+\newpage
+
+\( Q_{enc} \) can be written in terms of charge density. 
+\begin{equation}
+Q_{enc} = \int_V \rho d\tau
+\end{equation}
+where \( \rho \) is the charge density \( \frac{Q_{enc}}{V} \). Since \( \rho \) is constant it comes out of the integral. The integral is now evaluates to the volume. \( \rho \) multiplied by the volume just gives \( Q_{enc} \).
+
+Now we can write Gauss's law with \( Q_{enc} \) expressed in terms of \( \rho \). 
+\begin{equation}
+\int_V (\nabla{} \cdot \mathbf{E}) d\tau = \int_V (\frac{\rho}{\epsilon_0})d\tau
+\end{equation}
+Since this is true for any volume, the integrands must be equal; now we have the differential form.
+\begin{equation}
+\boxed{\nabla{} \cdot \mathbf{E} = \frac{1}{\epsilon_0}\rho}
+\end{equation}
+
+The divergence of E can be written as follows:
+\begin{equation}
+\nabla{} \cdot \mathbf{E} = \frac{1}{4\pi\epsilon_0}\int \nabla{} \cdot (\frac{\hat{r}}{r^2})\rho(r')d\tau'
+\end{equation}
+The equation can be written this way because of the divergence theorem. Since the integrand must equal the volume integral of the field multiplied by the Dirac delta function. We solved for \( \frac{1}{r^2} \) previously to be \( 4\pi \), therefore:
+\begin{equation}
+\begin{gathered}
+\nabla{} \cdot \mathbf{E} = \frac{1}{4\pi\epsilon_0}\int 4\pi\delta^3(r-r')\rho(r')d\tau' \\
+=\frac{\rho}{\epsilon_0}
+\end{gathered}
+\end{equation}
+
+This is the differential form of the Gauss's law seen in Eq. 75. To recover the integral form we just integrate; giving us the same equation shown in Eq. 71.
+\begin{equation}
+\int_{\mathcal{V}} \nabla \cdot \mathbf{E}\ d \tau=\oint_{\mathcal{S}} \mathbf{E} \cdot d \mathbf{a}=\frac{1}{\epsilon_{0}} \int_{\mathcal{V}} \rho\ d \tau=\frac{1}{\epsilon_{0}} Q_{\mathrm{enc}}
+\end{equation}
+
+The power of using Gauss's law lies in symmetrical applications of finding electric fields. This can be demonstrated by a sphere, cylinder, box, etc. Refer to Griffith's p.70 - p.76 for examples.
+\newpage
+
+Now we will look at the curl of \( \mathbf{E} \). Given the our simplest electric field that we have been looking at:
+\begin{equation}
+E = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{r}
+\end{equation}
+We can then take the line integral of the electric field.
+\begin{equation}
+\int\limits_{a}^{b}\mathbf{E} \cdot d\mathbf{l}
+\end{equation}
+where \( d\mathbf{l} = dx\mathbf{\hat{x}} + dy\mathbf{\hat{y}}+dz\mathbf{\hat{z}} \) and in spherical coordinates:
+\begin{equation}
+d\mathbf{l} = d r \hat{\mathbf{r}}+r d \theta \hat{\theta}+r \sin \theta d \phi \hat{\phi}
+\end{equation}
+
+\begin{equation}
+\mathbf{E} \cdot d \mathbf{l}=\frac{1}{4 \pi \epsilon_{0}} \frac{q}{r^{2}} d r
+\end{equation}
+We get Eq. 82 because recall the dot product is the sum of the product of coefficients of a unit vector, giving a scalar. The only unit vector in this problem is \( \hat{r} \) therefore, we get the answer above without the other terms. Then if we take the integral on a closed interval, we get 0.
+Therefore,
+\begin{equation}
+\int_{\mathrm{a}}^{\mathrm{b}} \mathbf{E} \cdot d \mathrm{l}=\frac{1}{4 \pi \epsilon_{0}} \int_{\mathrm{a}}^{\mathrm{b}} \frac{q}{r^{2}} d r=\left.\frac{-1}{4 \pi \epsilon_{0}} \frac{q}{r}\right|_{r_{a}} ^{r_{b}}=\frac{1}{4 \pi \epsilon_{0}}\left(\frac{q}{r_{a}}-\frac{q}{r_{b}}\right) \boxed{= 0}
+\end{equation}
+
+if a and b are equal. 
+\begin{equation}
+\boxed{\oint \mathbf{E} \cdot d \mathbf{l}=0}
+\end{equation}
+
+And according to Stokes' theorem,
+
+\begin{equation}
+\int_{\mathcal{S}}(\nabla \times \mathbf{E}) \cdot d \mathbf{a}=\oint_{\mathcal{P}} \mathbf{E} \cdot d \mathbf{l}
+\end{equation}
+ 
+ And since the \( \oint \mathbf{E} \cdot d \mathbf{l}= 0 \), we can state that \( \nabla \times \mathbf{E} \) is 0.
+ \begin{equation}
+\boxed{ \nabla \times \mathbf{E} = 0};\ \mathrm{\ from\ Stokes'\ theorem.}
+ \end{equation}
+When talking about an electric field, the curl will always be zero as we have proved. And if we were to have many charges, giving the sum of multiple charges, the curl of the total E is also 0.
+\begin{equation}
+\nabla \times \mathbf{E}=\nabla \times\left(\mathbf{E}_{1}+\mathbf{E}_{2}+\ldots\right)=\left(\nabla \times \mathbf{E}_{1}\right)+\left(\nabla \times \mathbf{E}_{2}\right)+\ldots=0
+\end{equation}
+\newpage
+
+Electric fields have special properties where they are path independent (all \( \mathbf{E} \) are path independent). This allows us to define a function for the electric potential.
+
+\begin{equation}
+V(\mathbf{r}) \equiv-\int_{\mathcal{O}}^{\mathbf{r}} \mathbf{E} \cdot d \mathbf{l}
+\end{equation}
+
+\( \mathcal{O} \) represents a standard reference point; the potential is only dependent on the point \( \mathbf{r} \). This is called the electric potential. 
+
+The potential difference between two points can be given by:
+\begin{equation}
+V(\mathbf{b})-V(\mathbf{a})=-\int_{0}^{\mathbf{b}} \mathbf{E} \cdot d \mathbf{l}+\int_{0}^{\mathbf{a}} \mathbf{E} \cdot d \mathbf{l}
+\end{equation}
+\begin{equation}
+=-\int_{\mathcal{O}}^{\mathrm{b}} \mathbf{E} \cdot d \mathbf{l}-\int_{\mathbf{a}}^{\mathcal{O}} \mathbf{E} \cdot d \mathbf{l}=-\int_{\mathbf{a}}^{\mathbf{b}} \mathbf{E} \cdot d \mathbf{l}
+\end{equation}
+ Now by the fundamental theorem of gradients (Eq. 39):
+ \begin{equation}
+ V(\mathbf{b})-V(\mathbf{a})=\int_{\mathbf{a}}^{\mathbf{b}}(\nabla V) \cdot d \mathbf{l}
+ \end{equation}
+\begin{equation}
+\therefore\ \int_{\mathbf{a}}^{\mathbf{b}}(\mathbf{\nabla} V) \cdot d \mathbf{l}=-\int_{\mathbf{a}}^{\mathbf{b}} \mathbf{E} \cdot d \mathbf{l}
+\end{equation}
+
+Since this is true for any \( \mathbf{a} \) and \( \mathbf{b} \), then the integrands must be equal.
+\begin{equation}
+\boxed{\mathbf{E} = -\nabla V}
+\end{equation}
+
+As we can see, the electric field is the gradient of the electric potential. Now that we know this, we can ask what does \( \mathbf{E} \) do the following equations look like in terms of the electric potential V. 
+
+\begin{equation}
+\nabla \cdot \mathbf{E}=\frac{\rho}{\epsilon_{0}} \quad \text { and } \quad \nabla \times \mathbf{E}=0
+\end{equation} 
+\newpage
+
+
+\section{Useful Information}
+\cfoot{Info}
+Cylindrical coordinates:
+
+2 Dimensions
+\begin{equation}
+\begin{split}
+\iint r\ dr d\theta \\
+x=r\cos{\theta} \\
+y=r\sin{\theta}
+\end{split}
+\end{equation}
+3 Dimensions
+
+\begin{equation}
+\begin{split}
+\iiint r\ dr d\theta\ dz \\
+x=r\cos{\theta} \\
+y=r\sin{\theta} \\
+z=z
+\end{split}
+\end{equation}
+
+
+Spherical polar coordinates
+\begin{equation}
+\begin{split}
+\iiint r^2\sin{\theta}\ d\theta dr d\phi \\
+x=r\sin{\theta}\cos{\phi} \\
+y=r\cos{\theta}\sin{\phi} \\
+z=r\cos{\theta}
+\end{split}
+\end{equation}
+
+Directions of the coordinates for spherical polar coordinates: unit vectors \(  \hat{r},\ \hat{\theta},\ \hat{\phi} \).
+
+Unit vectors in terms of Cartesian coordinates:
+\begin{equation}
+\begin{gathered}
+\hat{r} = \sin{\theta}\cos{\phi}\mathbf{\hat{x}} + \sin{\theta}\sin{\phi} \mathbf{\hat{y}} +\cos{\theta}\mathbf{\hat{z}} \\
+\hat{\theta} = \cos{\theta}\cos{\phi}\mathbf{\hat{x}}+ \cos{\theta}\sin{\phi}\mathbf{\hat{y}} - \sin{\theta}\mathbf{\hat{z} }\\
+\hat{\phi} = -\sin{\phi}\mathbf{\hat{x}}+\cos{\phi} \mathbf{\hat{y}}
+\end{gathered}
+\end{equation}
+
+Infinitesimal displacement in spherical polar:
+
+\begin{equation}
+dl =dr\mathbf{\hat{r}} + rd\theta \mathbf{\hat{\theta}} +r\sin{\theta}d\phi\hat{\phi}
+\end{equation}
+
+\begin{equation}
+d\mathbf{a}=(dl_\theta)(dl_\phi)\mathbf{\hat{r}} = r^2\sin{\theta}d\theta d\phi \mathbf{\hat{r}}
+\end{equation}
+
+\begin{equation}
+d\mathbf{\tau}=(dl_\theta)(dl_\phi)(dl_\phi) = r^2\sin{\theta}drd\theta d\phi
+\end{equation}
+
+
+
+\end{document}
+
